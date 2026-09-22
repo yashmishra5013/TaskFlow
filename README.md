@@ -13,9 +13,7 @@ https://yashmishra5013.github.io/TaskFlow/
 
 ## 📸 Project Preview
 
-Add your project screenshot here after deployment.
-
----
+![TaskFlow Preview](taskflow-preview.png)
 
 ## ✨ Features
 
