@@ -44,10 +44,34 @@
 
 
         <!-- =====================================
-             ADD TASK
+             PROJECT & ADD TASK
         ====================================== -->
 
         <section class="task-input-section">
+
+
+            <!-- PROJECT -->
+
+            <div class="project-input-row">
+
+                <select id="projectInput">
+
+                    <option value="General">
+                        📁 General
+                    </option>
+
+                </select>
+
+
+                <button
+                    id="newProjectBtn"
+                    type="button"
+                >
+                    + New Project
+                </button>
+
+            </div>
+
 
 
             <!-- TASK -->
@@ -57,6 +81,7 @@
                 id="taskInput"
                 placeholder="What needs to be done?"
             >
+
 
 
             <!-- PRIORITY -->
@@ -78,12 +103,14 @@
             </select>
 
 
+
             <!-- DATE -->
 
             <input
                 type="date"
                 id="dueDateInput"
             >
+
 
 
             <!-- CATEGORY -->
@@ -113,6 +140,7 @@
             </select>
 
 
+
             <!-- TAGS -->
 
             <input
@@ -120,6 +148,7 @@
                 id="tagsInput"
                 placeholder="Tags: javascript, coding"
             >
+
 
 
             <!-- ADD -->
@@ -210,7 +239,7 @@
 
                     </div>
 
-                    <strong id="productivityPercent">
+                    <strong id="completionRate">
                         0%
                     </strong>
 
@@ -227,7 +256,7 @@
                 </div>
 
 
-                <span id="productivityText">
+                <span id="progressText">
                     0 of 0 tasks completed
                 </span>
 
@@ -260,7 +289,7 @@
                 </div>
 
 
-                <div id="upcomingTasks">
+                <div id="upcomingDeadlines">
 
                     <div class="dashboard-empty">
                         No upcoming deadlines
@@ -389,6 +418,7 @@
                     >
 
 
+
                     <!-- SORT -->
 
                     <select id="sortInput">
@@ -401,19 +431,19 @@
                             📅 Oldest First
                         </option>
 
-                        <option value="priority-high">
+                        <option value="priorityHigh">
                             🔴 Priority: High → Low
                         </option>
 
-                        <option value="priority-low">
+                        <option value="priorityLow">
                             🟢 Priority: Low → High
                         </option>
 
-                        <option value="due-soonest">
+                        <option value="dueSoon">
                             ⏰ Due Date: Soonest
                         </option>
 
-                        <option value="due-latest">
+                        <option value="dueLatest">
                             📆 Due Date: Latest
                         </option>
 
@@ -472,9 +502,105 @@
 
 
 
-    <!-- =========================================
-         EDIT MODAL
-    ========================================== -->
+    <!-- =====================================
+         CREATE PROJECT MODAL
+    ====================================== -->
+
+    <div
+        class="modal-overlay"
+        id="projectModal"
+    >
+
+        <div class="edit-modal">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Create New Project
+                    </h2>
+
+                    <p>
+                        Add a project to organize your tasks
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="modal-close"
+                    id="closeProjectModalBtn"
+                    type="button"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+
+            <!-- PROJECT FORM -->
+
+            <form id="projectForm">
+
+
+                <label for="projectNameInput">
+                    Project Name
+                </label>
+
+
+                <input
+                    type="text"
+                    id="projectNameInput"
+                    placeholder="Example: Portfolio Website"
+                >
+
+
+                <small>
+                    Give your project a clear and meaningful name.
+                </small>
+
+
+
+                <div class="modal-actions">
+
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelProjectBtn"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+                        Create Project
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         EDIT TASK MODAL
+    ====================================== -->
 
     <div
         class="modal-overlay"
@@ -518,11 +644,29 @@
             <form id="editForm">
 
 
+                <!-- PROJECT -->
+
+                <label for="editProjectInput">
+                    Project
+                </label>
+
+
+                <select id="editProjectInput">
+
+                    <option value="General">
+                        📁 General
+                    </option>
+
+                </select>
+
+
+
                 <!-- TASK NAME -->
 
                 <label for="editTaskInput">
                     Task Name
                 </label>
+
 
                 <input
                     type="text"
@@ -537,6 +681,7 @@
                 <label for="editPriorityInput">
                     Priority
                 </label>
+
 
                 <select id="editPriorityInput">
 
@@ -562,6 +707,7 @@
                     Due Date
                 </label>
 
+
                 <input
                     type="date"
                     id="editDueDateInput"
@@ -574,6 +720,7 @@
                 <label for="editCategoryInput">
                     Category
                 </label>
+
 
                 <select id="editCategoryInput">
 
@@ -607,11 +754,13 @@
                     Tags
                 </label>
 
+
                 <input
                     type="text"
                     id="editTagsInput"
                     placeholder="javascript, coding"
                 >
+
 
                 <small>
                     Separate multiple tags with commas
